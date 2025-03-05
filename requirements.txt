@@ -1,0 +1,7 @@
+streamlit
+langchain_groq 
+langchain
+requests
+PIL 
+io 
+dotenv 
