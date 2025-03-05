@@ -1,5 +1,5 @@
 import streamlit as st
-from pillow import Image
+from PIL import Image
 import requests
 from io import BytesIO
 from langchain_groq import ChatGroq
