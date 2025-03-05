@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize components
-GROQ_API_KEY = "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"
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 groq_chat = ChatGroq(
     temperature=0.3,
     model_name="llama-3.3-70b-specdec",
@@ -20,13 +20,13 @@ groq_chat = ChatGroq(
 )
 
 # Free APIs configuration
-HF_API_URL = "https://api-inference.huggingface.co/models/"
-HF_TOKEN = "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"
+HF_API_URL = st.secrets["HF_API_URL"]
+HF_TOKEN = st.secrets["HF_TOKEN"]
 
 # Hybrid medical model configuration
-MEDICAL_MODEL = "openai/clip-vit-base-patch32"
-GENERAL_MODEL = "nlpconnect/vit-gpt2-image-captioning"
-PRODUCT_MODEL = "google/vit-base-patch16-224"
+MEDICAL_MODEL = st.secrets["MEDICAL_MODEL"]
+GENERAL_MODEL = st.secrets["GENERAL_MODEL"]
+PRODUCT_MODEL = st.secrets["PRODUCT_MODEL"]
 
 def analyze_image(image_bytes, model_name):
     """Analyze image using free Hugging Face models"""
